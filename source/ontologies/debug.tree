@@ -1,0 +1,2 @@
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	working-note d:"Analog to skos/editorialNote"

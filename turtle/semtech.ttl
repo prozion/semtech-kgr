@@ -1,0 +1,300 @@
+@prefix : <https://purl.org/prozion/food_industry#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+:abbr
+ rdfs:comment "Abbreviation" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:alma-mater
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :uni, :edu .
+
+:Article
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Paper .
+
+:ArtificialObject
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
+
+:author
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :creator .
+
+:bdate
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :start ;
+ rdfs:domain :Person .
+
+:bplace
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :place ;
+ rdfs:domain :Person .
+
+:city
+ rdfs:subPropertyOf :place ;
+ rdf:type rdf:Property ;
+ rdfs:range :City .
+
+:City
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Place .
+
+:co-author
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :contributor .
+
+:Code
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumanWorkProduct .
+
+:College
+ rdf:type owl:Class ;
+ rdfs:subClassOf :EducationalUnit .
+
+:Committee
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:company
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :Company .
+
+:Company
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:contributor
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :worker .
+
+:country
+ rdfs:domain :Place ;
+ rdf:type rdf:Property ;
+ rdfs:range :Country .
+
+:Country
+ rdf:type owl:Class .
+
+:creator
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :worker .
+
+:Date
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Time .
+
+:ddate
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :end ;
+ rdfs:domain :Person .
+
+:dplace
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :place ;
+ rdfs:domain :Person .
+
+:edu
+ rdfs:domain :Person ;
+ rdfs:comment "What school/college/university the person graduated" ;
+ rdf:type rdf:Property ;
+ rdfs:range :EducationalUnit .
+
+:EducationalUnit
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:email
+ rdf:type rdf:Property ;
+ rdfs:range :Email .
+
+:Email
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Uri .
+
+:end
+ rdf:type rdf:Property ;
+ rdfs:range :Time .
+
+:Facebook
+ rdf:type owl:Class ;
+ rdfs:subClassOf :UrlCore .
+
+<https://purl.org/prozion/food_industry#>
+ rdf:type owl:Ontology ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://www.w3.org/2001/XMLSchema#> ;
+ rdfs:label "Knowledge graph on Russian food industry" .
+
+:former-id
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :id .
+
+:HumanWorkProduct
+ rdf:type owl:Class ;
+ rdfs:subClassOf :ArtificialObject .
+
+:id
+ rdf:type rdf:Property .
+
+:LinkedIn
+ rdf:type owl:Class ;
+ rdfs:subClassOf :UrlCore .
+
+:London
+ rdf:type :City .
+
+:MessengerId
+ rdf:type owl:Class .
+
+:name
+ rdfs:subPropertyOf rdfs:label ;
+ rdfs:domain :Object ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:Object
+ rdf:type owl:Class .
+
+:old-url
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :url .
+
+:Ontology
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Ontology, :Code .
+
+:org
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:Organization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
+
+:Oxford
+ rdf:type :City .
+
+:Paper
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Text .
+
+:Person
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
+
+:place
+ rdfs:subPropertyOf  ;
+ rdf:type rdf:Property ;
+ rdfs:range :Place .
+
+:Place
+ rdf:type owl:Class .
+
+:Queens.ox
+ rdf:type :University ;
+ :place :Oxford ;
+ rdfs:label "The Queen's College, Oxford" ;
+ :start :1341 .
+
+rdfs:label
+ rdf:type rdf:Property .
+
+:Specification
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Paper .
+
+:start
+ rdf:type rdf:Property ;
+ rdfs:range :Time .
+
+:subm
+ rdfs:subPropertyOf :start ;
+ rdfs:domain :Paper ;
+ rdfs:comment "Date of paper submission" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Time .
+
+:TelegramId
+ rdf:type owl:Class ;
+ rdfs:subClassOf :MessengerId .
+
+:Text
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumanWorkProduct .
+
+:Tim_Berners-Lee
+ rdf:type :Person ;
+ :edu :Queens.ox ;
+ :bdate :08.06.1955 ;
+ :bplace :London .
+
+:Time
+ rdf:type owl:Class .
+
+:title
+ rdfs:domain :HumanWorkProduct ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:Turtle_spec
+ :url "w3.org/TeamSubmission/turtle" ;
+ :subm :2011 ;
+ :author :David_Backet, :Tim_Berners-Lee ;
+ :title "Turtle - Terse RDF Triple Language" ;
+ rdf:type :Specification .
+
+:UK
+ rdf:type :Country .
+
+:uni
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :University .
+
+:University
+ rdf:type owl:Class ;
+ rdfs:subClassOf :EducationalUnit .
+
+:Uri
+ rdf:type owl:Class .
+
+:url
+ rdfs:comment "Special economic zone, industrial park etc." ;
+ rdf:type rdf:Property ;
+ rdfs:range :UrlCore .
+
+:Url
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Uri .
+
+:UrlCore
+ rdfs:subClassOf :Url ;
+ rdfs:comment "Url with prefixes removed: http://, https://, https://www. etc. to make it neater" ;
+ rdf:type owl:Class .
+
+:USA
+ rdf:type :Country .
+
+:VKontakte
+ rdf:type owl:Class ;
+ rdfs:subClassOf :UrlCore .
+
+:worker
+ rdfs:domain :HumanWorkProduct ;
+ rdf:type rdf:Property ;
+ rdfs:range :Person .
+
+:year
+ rdf:type rdf:Property ;
+ rdfs:range :Year .
+
+:Year
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Time .
+

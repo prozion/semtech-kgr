@@ -1,0 +1,12 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	Organization subclass-of:Object
+		Committee
+		Company
+		EducationalUnit
+			College
+			University
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	org range:Organization
+		company range:Company
+		uni range:University
+			alma-mater

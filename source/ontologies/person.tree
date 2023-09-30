@@ -1,0 +1,9 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	Person subclass-of:Object
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	bdate domain:Person subproperty-of:start
+	bplace domain:Person subproperty-of:place
+	ddate domain:Person subproperty-of:end
+	dplace domain:Person subproperty-of:place
+	edu domain:Person range:EducationalUnit d:"What school/college/university the person graduated"
+		alma-mater

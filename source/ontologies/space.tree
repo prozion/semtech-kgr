@@ -1,0 +1,8 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	Country
+	Place
+		City
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	country domain:Place range:Country
+	place range:Place
+		city range:City

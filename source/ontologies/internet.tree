@@ -1,0 +1,14 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	MessengerId
+		TelegramId
+	Uri
+		Email
+		Url
+			UrlCore d:"Url with prefixes removed: http://, https://, https://www. etc. to make it neater"
+				Facebook
+				LinkedIn
+				VKontakte
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	email range:Email
+	url range:UrlCore d:"Special economic zone, industrial park etc."
+		old-url

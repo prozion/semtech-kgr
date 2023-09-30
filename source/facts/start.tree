@@ -1,0 +1,11 @@
+place +a:Country
+	UK +a:City
+		London
+		Oxford
+	USA +a:City
+people +a:Person
+	Tim_Berners-Lee bdate:08.06.1955 bplace:London edu:Queens.ox
+specifications +a:Specification
+	Turtle_spec title:"Turtle - Terse RDF Triple Language" url:w3.org/TeamSubmission/turtle subm:2011 author:David_Backet,Tim_Berners-Lee
+university +a:University
+	Queens.ox name:"The Queen's College, Oxford" start:1341 place:Oxford

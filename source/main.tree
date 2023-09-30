@@ -1,0 +1,14 @@
+semtech a:owl/Ontology ns:https://purl.org/prozion/semtech# rdfs/label:"A knowledge graph on Semantic Web technologies (aka SemTech)"
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		xsd ns:http://www.w3.org/2001/XMLSchema#
+	[ontologies/internet.tree]
+	[ontologies/object.tree]
+	[ontologies/organization.tree]
+	[ontologies/person.tree]
+	[ontologies/space.tree]
+	[ontologies/time.tree]
+	individuals
+		[facts/start.tree]
