@@ -6,6 +6,12 @@ classes +a:owl/Class +hi-inv-rel:subclass-of
 			College
 			University
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	hq subproperty-of:place domain:Organization range:City d:"Headquarters"
+	stuff domain:Person range:Organization
+		chief
+			ceo
+			cto
+		job
 	org range:Organization
 		company range:Company
 		uni range:University

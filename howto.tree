@@ -1,0 +1,31 @@
+setup d:"How to set up and use this knowledge graph"
+	racket d:"Lisp-family language, that used for compilation of KGR source files"
+		download_racket url:download.racket-lang.org
+		launch_bash_installer
+		check_repl cmd:`racket`
+			check_repl_simple_expr racket-cmd:`((lambda (x) (* x x)) 2)` result:`4`
+		install_libs cmd:"ROOT_PATH=~; RACKET_VERSION_NUMBER=`racket --version | sed 's/.*\([0-9]\.[0-9]\).*/\1/'`; RACKET_PATH=~/.local/share/racket/$RACKET_VERSION_NUMBER/collects"
+			install_odysseus d:"Library with essential functions" cmd:`git clone git@github.com:prozion/odysseus-racket.git $ROOT_PATH/libs/odysseus; ln -sf $ROOT_PATH/libs/odysseus/odysseus $RACKET_PATH/odysseus`
+			install_tabtree d:"Library to read and manipulate Tabtree format (modular RDF-based language)" cmd:`git clone git@github.com:prozion/tabtree-racket.git $ROOT_PATH/libs/tabtree; ln -sf $ROOT_PATH/libs/tabtree/tabtree $RACKET_PATH/tabtree`
+	java
+		java_jdk cmd:`sudo apt install default-jdk`
+	nodejs cmd:`sudo apt install nodejs`
+		install_npm cmd:`sudo apt install npm`
+	rdf_validator prereq:nodejs cmd:`sudo npm install -g turtle-validator`
+	arq prereq:java_jdk
+		download_jena url:jena.apache.org/download/index.cgi dest-dir:~/app/jena d:"OBS: download binary distro, not source files"
+		add_cmdline_scripts bashrc:`export PATH=$PATH:~/app/jena/bin`
+		update_bashrc
+	atom  d:"Atom code editor, developed by GitHub company before it had been acquired by Microsoft."
+		install_dependencies cmd:`sudo apt install libasound2 libcurl4 libgbm1 libgcrypt20 libgtk-3-0 libnotify4 libnss3 libglib2.0-bin xdg-utils libx11-xcb1 libxcb-dri3-0 libxss1 libxtst6 libxkbfile1`
+		download_atom url:github.com/atom/atom/releases/tag/v1.60.0 file:atom-amd64.tar.gz
+		untar_archive cmd:`mv atom-amd64.tar.gz ~/bin; tar xf ~/bin/atom-amd64.tar.gz`
+		install_racket_syntax cmd:`git clone git@github.com:prozion/atom-racket-syntax.git $ROOT_PATH/plugins/language_racket; ln -sf $ROOT_PATH/plugins/language_racket $ROOT_PATH/.atom/packages/language-racket`
+		install_tabtree_syntax cmd:`git clone git@github.com:prozion/tabtree-atom-syntax.git $ROOT_PATH/plugins/language_tabtree; ln -sf $ROOT_PATH/plugins/language_tabtree $ROOT_PATH/.atom/packages/language-tabtree`
+		install_rdf_syntax cmd:`git clone https://github.com/mjansing/language-rdf.git $ROOT_PATH/plugins/language_rdf; ln -sf $ROOT_PATH/plugins/language_rdf $ROOT_PATH/.atom/packages/language-rdf`
+workflow d:"My usual workflow"
+	check_undeclared_resources cmd:`scripts/undeclared.rkt`
+	editing_tabtree_files code-editor:Atom
+	compile_turtle cmd:`./compile.sh`
+	validate_turtle cmd:`ttl turtle/semtech.ttl`
+	sparql_query cmd:`arq --data turtle/semtech.ttl --query sparql/spec_writers_from_England.rq`

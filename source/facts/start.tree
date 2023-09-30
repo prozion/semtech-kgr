@@ -1,11 +1,22 @@
-place +a:Country
-	UK +a:City
+companies +a:Company
+	Cipher url:cipher.ai hq:London
+places +a:Country
+	UK +a:City +hi-inv-rel:country
+		Bristol
+		Cambridge
 		London
 		Oxford
-	USA +a:City
+	USA +a:City +hi-inv-rel:country
+		San_Francisco
 people +a:Person
+	Andy_Seaborne place:Bristol uni:UCambridge linkedin:linkedin.com/in/andyseaborne 
+	David_Backet alt:Dave_Beckett place:San_Francisco uni:UBristol hp-url:dajobe.org linkedin:linkedin.com/in/dajobe
+	Steve_Harris email:steve.harris@garlik.com cto:Cipher
 	Tim_Berners-Lee bdate:08.06.1955 bplace:London edu:Queens.ox
 specifications +a:Specification
 	Turtle_spec title:"Turtle - Terse RDF Triple Language" url:w3.org/TeamSubmission/turtle subm:2011 author:David_Backet,Tim_Berners-Lee
+	SPARQL_1.1_spec title:"SPARQL 1.1 Query Language" url:w3.org/TR/sparql11-query w3c-rec:2013 editor:Steve_Harris,Andy_Seaborne
 university +a:University
-	Queens.ox name:"The Queen's College, Oxford" start:1341 place:Oxford
+	Queens.ox name:"The Queen's College, Oxford" hq:Oxford start:1341 
+	UBristol name:"University of Bristol" hq:Bristol start:1595,1876,1909
+	UCambridge hq:Cambridge start:~1209

@@ -1,4 +1,4 @@
-@prefix : <https://purl.org/prozion/food_industry#> .
+@prefix : <https://purl.org/prozion/semtech#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,6 +13,12 @@
 :alma-mater
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :uni, :edu .
+
+:Andy_Seaborne
+ rdf:type :Person ;
+ :place :Bristol ;
+ :uni :UCambridge ;
+ :linkedin "linkedin.com/in/andyseaborne" .
 
 :Article
  rdf:type owl:Class ;
@@ -35,6 +41,27 @@
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :place ;
  rdfs:domain :Person .
+
+:Bristol
+ :country :UK ;
+ rdf:type :City .
+
+:Cambridge
+ :country :UK ;
+ rdf:type :City .
+
+:ceo
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :chief .
+
+:chief
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :stuff .
+
+:Cipher
+ rdf:type :Company ;
+ :url "cipher.ai" ;
+ :hq :London .
 
 :city
  rdfs:subPropertyOf :place ;
@@ -86,9 +113,26 @@
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :worker .
 
+:cto
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :chief .
+
+:cv-url
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "Resume (CV) page" ;
+ rdf:type rdf:Property .
+
 :Date
  rdf:type owl:Class ;
  rdfs:subClassOf :Time .
+
+:David_Backet
+ owl:sameAs :Dave_Beckett ;
+ rdf:type :Person ;
+ :place :San_Francisco ;
+ :uni :UBristol ;
+ :linkedin "linkedin.com/in/dajobe" ;
+ :hp-url "dajobe.org" .
 
 :ddate
  rdf:type rdf:Property ;
@@ -99,6 +143,10 @@
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :place ;
  rdfs:domain :Person .
+
+:editor
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :contributor .
 
 :edu
  rdfs:domain :Person ;
@@ -126,14 +174,26 @@
  rdf:type owl:Class ;
  rdfs:subClassOf :UrlCore .
 
-<https://purl.org/prozion/food_industry#>
- rdf:type owl:Ontology ;
- owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://www.w3.org/2001/XMLSchema#> ;
- rdfs:label "Knowledge graph on Russian food industry" .
+:fb
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :Facebook .
 
 :former-id
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :id .
+
+:hp-url
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "Homepage URL" ;
+ rdf:type rdf:Property .
+
+:hq
+ rdfs:subPropertyOf :place ;
+ rdfs:domain :Organization ;
+ rdfs:comment "Headquarters" ;
+ rdf:type rdf:Property ;
+ rdfs:range :City .
 
 :HumanWorkProduct
  rdf:type owl:Class ;
@@ -146,7 +206,13 @@
  rdf:type owl:Class ;
  rdfs:subClassOf :UrlCore .
 
+:linkedin
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :LinkedIn .
+
 :London
+ :country :UK ;
  rdf:type :City .
 
 :MessengerId
@@ -178,6 +244,7 @@
  rdfs:subClassOf :Object .
 
 :Oxford
+ :country :UK ;
  rdf:type :City .
 
 :Paper
@@ -189,7 +256,6 @@
  rdfs:subClassOf :Object .
 
 :place
- rdfs:subPropertyOf  ;
  rdf:type rdf:Property ;
  rdfs:range :Place .
 
@@ -198,12 +264,28 @@
 
 :Queens.ox
  rdf:type :University ;
- :place :Oxford ;
  rdfs:label "The Queen's College, Oxford" ;
- :start :1341 .
+ :hq :Oxford ;
+ :start "1341" .
 
 rdfs:label
  rdf:type rdf:Property .
+
+:San_Francisco
+ :country :USA ;
+ rdf:type :City .
+
+<https://purl.org/prozion/semtech#>
+ rdf:type owl:Ontology ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://www.w3.org/2001/XMLSchema#> ;
+ rdfs:label "A knowledge graph on Semantic Web technologies (aka SemTech)" .
+
+:SPARQL_1.1_spec
+ :w3c-rec "2013" ;
+ :url "w3.org/TR/sparql11-query" ;
+ :editor :Steve_Harris, :Andy_Seaborne ;
+ :title "SPARQL 1.1 Query Language" ;
+ rdf:type :Specification .
 
 :Specification
  rdf:type owl:Class ;
@@ -212,6 +294,16 @@ rdfs:label
 :start
  rdf:type rdf:Property ;
  rdfs:range :Time .
+
+:Steve_Harris
+ rdf:type :Person ;
+ :email "steve.harris@garlik.com" ;
+ :cto :Cipher .
+
+:stuff
+ rdfs:domain :Person ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
 
 :subm
  rdfs:subPropertyOf :start ;
@@ -231,11 +323,12 @@ rdfs:label
 :Tim_Berners-Lee
  rdf:type :Person ;
  :edu :Queens.ox ;
- :bdate :08.06.1955 ;
+ :bdate "08.06.1955" ;
  :bplace :London .
 
 :Time
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
 
 :title
  rdfs:domain :HumanWorkProduct ;
@@ -244,10 +337,20 @@ rdfs:label
 
 :Turtle_spec
  :url "w3.org/TeamSubmission/turtle" ;
- :subm :2011 ;
+ :subm "2011" ;
  :author :David_Backet, :Tim_Berners-Lee ;
  :title "Turtle - Terse RDF Triple Language" ;
  rdf:type :Specification .
+
+:UBristol
+ rdf:type :University ;
+ rdfs:label "University of Bristol" ;
+ :hq :Bristol ;
+ :start "1595", "1876", "1909" .
+
+:UCambridge
+ rdf:type :University ;
+ :hq :Cambridge .
 
 :UK
  rdf:type :Country .
@@ -262,10 +365,10 @@ rdfs:label
  rdfs:subClassOf :EducationalUnit .
 
 :Uri
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
 
 :url
- rdfs:comment "Special economic zone, industrial park etc." ;
  rdf:type rdf:Property ;
  rdfs:range :UrlCore .
 
@@ -281,9 +384,24 @@ rdfs:label
 :USA
  rdf:type :Country .
 
+:vk
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :VKontakte .
+
 :VKontakte
  rdf:type owl:Class ;
  rdfs:subClassOf :UrlCore .
+
+:w3c-rec
+ rdfs:subPropertyOf :subm ;
+ rdfs:domain :W3CSpecification ;
+ rdfs:comment "When the paper acquired a W3C Recommendation status" ;
+ rdf:type rdf:Property .
+
+:W3CSpecification
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Specification .
 
 :worker
  rdfs:domain :HumanWorkProduct ;
@@ -297,4 +415,13 @@ rdfs:label
 :Year
  rdf:type owl:Class ;
  rdfs:subClassOf :Time .
+
+:YouTube
+ rdf:type owl:Class ;
+ rdfs:subClassOf :UrlCore .
+
+:yt
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :YouTube .
 
