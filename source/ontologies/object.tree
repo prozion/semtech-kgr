@@ -4,6 +4,8 @@ classes +a:owl/Class +hi-inv-rel:subclass-of
 		GroupOfPeople
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	abbr range:rdfs/Literal d:"Abbreviation"
+	deabbr range:rdfs/Literal d:"Deabbreviation"
+	def range:rdfs/Literal d:"Definition"
 	id
 		former-id
 	rdfs/label
