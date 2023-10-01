@@ -1,0 +1,2 @@
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	from domain:owl/Thing range:owl/Thing

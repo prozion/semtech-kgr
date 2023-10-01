@@ -1,0 +1,22 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	MaturityLevel subclass-of:owl/Thing rdfs/seeAlso:"w3.org/2004/02/Process-20040205/tr.html"
+	W3CDocument subclass-of:Document
+		W3CDraft
+			W3CUnofficialDraft
+			W3CWorkingDraft abbr:"WD" class-type:MaturityLevel
+		W3CCandidateRecommendation abbr:"CR" class-type:MaturityLevel
+		W3CProposedRecommendation abbr:"PR" class-type:MaturityLevel
+		W3CRecommendation abbr:"REC" class-type:MaturityLevel subclass-of:Specification
+		W3CNote
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	editor 
+		former-editor eq-property:previous-editor
+		previous-editor
+	w3c-issued domain:W3CDocument range:Date
+		w3c-wd domain:W3CWorkingDraft
+		w3c-cr domain:W3CCandidateRecommendation
+		w3c-pr domain:W3CProposedRecommendation
+		w3c-rec domain:W3CRecommendation d:"When the paper acquired a W3C Recommendation status"
+		w3c-subm d:"Date of paper submission"
+		w3c-note domain:W3CNote
+		w3c-ud domain:W3CUnofficialDraft

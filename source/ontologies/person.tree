@@ -6,4 +6,12 @@ properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	ddate domain:Person subproperty-of:end
 	dplace domain:Person subproperty-of:place
 	edu domain:Person range:EducationalUnit d:"What school/college/university the person graduated"
+		ba d:"Bachelor degree"
+		ms d:"Master degree"
+		phd d:"PhD degree"
 		alma-mater
+	url
+		foaf d:"RDF FOAF information on the person"
+		pub-url d:"List of publications"
+		cv-url d:"Resume (CV) page"
+		hp-url d:"Homepage URL"

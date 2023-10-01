@@ -1,0 +1,14 @@
+specifications +a:W3CDocument
+	Hydra_Core_Vocabulary url:hydra-cg.com/spec/latest/core w3c-ud:13.07.2021 author:Markus_Lathaler
+	OWL2_Overview title:"OWL 2 Web Ontology Language. Document Overview" url:w3.org/TR/owl-overview w3c-rec:11.12.2012 contributor:Ivan_Herman,Ian_Horrocks,Peter_F_Patel-Schneider
+	OWL2_Primer title:"OWL 2 Web Ontology Language Primer" url:w3.org/TR/owl-primer w3c-rec:11.12.2012 editor:Pascal_Hitzler,Markus_Krotzsch,Bijan_Parsia,Peter_F_Patel-Schneider,Sebastian_Rudolph
+	RDF_1.1_Schema url:w3.org/TR/rdf11-schema w3c-rec:25.02.2014 editor:Dan_Brickley,R_V_Guha former-editor:Brian_McBride
+	RDF_1.2_Schema url:w3.org/TR/rdf-schema w3c-wd:28.09.2023 from:RDF_1.1_Schema
+	RDF_1.1 title:"RDF 1.1 Concepts and Abstract Syntax" url:w3.org/TR/2014/REC-rdf11-concepts-20140225 w3c-note:25.02.2014 editor:Richard_Cyganiak,David_Wood,Markus_Lathaler
+	RDF_1.1_Primer url:w3.org/TR/rdf11-primer w3c-note:24.06.2014 editor:Guus_Schreiber,Yves_Raymond former-editor:Frank_Manola,Eric_Miller,Brian_McBride
+	RDF_1.1_Semantics url:w3.org/TR/rdf11-mt w3c-rec:25.02.2014 editor:Patrick_J_Hayes,Peter_F_Patel-Schneider
+	RDF_Dataset_Canonicalization url:w3.org/TR/rdf-canon w3c-wd:11.09.2023 author:Dave_Longley editor:Dave_Longley,Gregg_Kellogg,Dan_Yamamoto former-editor:Manu_Sporny
+	SPARQL_1.1_spec title:"SPARQL 1.1 Query Language" url:w3.org/TR/sparql11-query w3c-rec:2013 editor:Steve_Harris,Andy_Seaborne
+	Trig_spec title:"RDF 1.1 TriG" url:w3.org/TR/trig w3c-rec:25.02.2014 editor:Gavin_Carothers,Andy_Seaborne author:Chris_Bizer,Richard_Cyganiak
+	Turtle_spec title:"Turtle - Terse RDF Triple Language" url:w3.org/TeamSubmission/turtle w3c-subm:2011 author:David_Backet,Tim_Berners-Lee
+

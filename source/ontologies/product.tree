@@ -1,0 +1,26 @@
+classes +a:owl/Class +hi-inv-rel:subclass-of
+	Product subclass-of:Object
+		PeriodicPublication
+			Journal
+				ScientificJournal
+			Newspaper
+		SoftwareProduct
+			Application
+			Code
+				Ontology subclass-of:owl/Ontology
+		Text
+			Book
+			Document
+				Specification
+			Paper
+				Article
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	book domain:Person range:Book
+	maker domain:Product range:Person
+		contributor
+			co-author
+			editor
+		creator 
+			author
+	pub subproperty-of:start domain:Text range:Time d:"Date of text publication"
+	title domain:Product range:rdfs/Literal

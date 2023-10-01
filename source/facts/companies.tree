@@ -1,0 +1,10 @@
+companies +a:Company
+	BBC hq:London start:1922
+	Bell_Labs hq:Murray_Hill start:1925 url:bell-labs.com
+	Cipher url:cipher.ai hq:London
+	Digital_Bazaar hq:Blacksburg url:digitalbazaar.com
+	Google hq:Mountain_View start:1998 url:about.google
+	Hewlett_Packard hq:Palo_Alto start:1939
+	Lex_Machina hq:Menlo_Park start:2013
+	Nuance url:nuance.com 
+	TopQuadrant url:topquadrant.com hq:Raleigh start:2001

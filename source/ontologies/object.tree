@@ -1,26 +1,11 @@
 classes +a:owl/Class +hi-inv-rel:subclass-of
-	Object
-		ArtificialObject
-			HumanWorkProduct
-				Code
-					Ontology subclass-of:owl/Ontology
-				Text
-					Paper
-						Article
-						Specification
-							W3CSpecification
+	Object subclass-of:owl/Thing
+	GroupOfObjects subclass-of:owl/Thing
+		GroupOfPeople
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	abbr range:rdfs/Literal d:"Abbreviation"
-	worker domain:HumanWorkProduct range:Person
-		contributor
-			co-author
-			editor
-		creator 
-			author
 	id
 		former-id
 	rdfs/label
 		name domain:Object range:rdfs/Literal
-	subm subproperty-of:start domain:Paper range:Time d:"Date of paper submission"
-		w3c-rec domain:W3CSpecification d:"When the paper acquired a W3C Recommendation status"
-	title domain:HumanWorkProduct range:rdfs/Literal
+			

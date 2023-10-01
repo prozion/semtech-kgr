@@ -1,0 +1,3 @@
+books +a:Book
+	A_Description_Logic_Primer author:Markus_Krotzsch,Frantisek_Simancik,Ian_Horrocks url:korrekt.org/page/A_Description_Logic_Primer_(IOS_Press) year:2014
+	Foundations_of_Semantic_Web_technologies author:Pascal_Hitzler,Markus_Krotzsch,Sebastian_Rudolph url:semantic-web-book.org year:2009

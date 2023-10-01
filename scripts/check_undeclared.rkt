@@ -12,7 +12,7 @@
 
 (define-catch (find-undeclared-predicates tabtree)
   (let* (
-        (all-keys (->> tabtree hash-values (map remove-specials) (map hash-keys) flatten remove-duplicates))
+        (all-keys (->> tabtree hash-values (map remove-specials) (map hash-keys) flatten remove-duplicates (filter-not namespaced?)))
         (special-ids (join (hash-keys aliases) reserved-predicates))
         (declared-ids (-> tabtree hash-keys)))
     (minus all-keys (join declared-ids special-ids))))

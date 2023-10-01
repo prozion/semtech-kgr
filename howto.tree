@@ -1,8 +1,8 @@
-setup d:"How to set up and use this knowledge graph"
+setup d:"How to setup neccessary tools"
 	racket d:"Lisp-family language, that used for compilation of KGR source files"
 		download_racket url:download.racket-lang.org
-		launch_bash_installer
-		check_repl cmd:`racket`
+		launch_installer d:"Launch downloaded bash script that would automatically install the language"
+		launch_repl cmd:`racket`
 			check_repl_simple_expr racket-cmd:`((lambda (x) (* x x)) 2)` result:`4`
 		install_libs cmd:"ROOT_PATH=~; RACKET_VERSION_NUMBER=`racket --version | sed 's/.*\([0-9]\.[0-9]\).*/\1/'`; RACKET_PATH=~/.local/share/racket/$RACKET_VERSION_NUMBER/collects"
 			install_odysseus d:"Library with essential functions" cmd:`git clone git@github.com:prozion/odysseus-racket.git $ROOT_PATH/libs/odysseus; ln -sf $ROOT_PATH/libs/odysseus/odysseus $RACKET_PATH/odysseus`
@@ -24,7 +24,9 @@ setup d:"How to set up and use this knowledge graph"
 		install_tabtree_syntax cmd:`git clone git@github.com:prozion/tabtree-atom-syntax.git $ROOT_PATH/plugins/language_tabtree; ln -sf $ROOT_PATH/plugins/language_tabtree $ROOT_PATH/.atom/packages/language-tabtree`
 		install_rdf_syntax cmd:`git clone https://github.com/mjansing/language-rdf.git $ROOT_PATH/plugins/language_rdf; ln -sf $ROOT_PATH/plugins/language_rdf $ROOT_PATH/.atom/packages/language-rdf`
 workflow d:"My usual workflow"
-	check_undeclared_resources cmd:`scripts/undeclared.rkt`
+	perform_checks
+		check_undeclared_resources cmd:`scripts/check_undeclared.rkt`
+		check_duplications cmd:`scripts/check_dupids.sh people.tree`
 	editing_tabtree_files code-editor:Atom
 	compile_turtle cmd:`./compile.sh`
 	validate_turtle cmd:`ttl turtle/semtech.ttl`

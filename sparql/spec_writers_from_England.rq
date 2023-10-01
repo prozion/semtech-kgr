@@ -7,9 +7,9 @@ prefix afn: <http://jena.apache.org/ARQ/function#>
 
 select ?person_name ?place where {
   # ?s :author ?person .
-  ?s ?p_worker ?person .
+  ?s ?p_maker ?person .
   ?s rdf:type :Specification .
-  ?p_worker rdfs:subPropertyOf* :worker .
+  ?p_maker rdfs:subPropertyOf* :maker .
   {
     ?person ?p_place ?place .
     ?p_place rdfs:subPropertyOf* :place .

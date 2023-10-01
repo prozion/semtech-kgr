@@ -1,3 +1,4 @@
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	broader a:owl/TransitiveProperty,owl/ReflexiveProperty owl/inverseOf:narrower d:"Substitution for skos/broader"
+	class-type domain:owl/Class range:owl/Class
 	narrower d:"Substitution for skos/narrower"

@@ -1,20 +1,23 @@
 classes +a:owl/Class +hi-inv-rel:subclass-of
-	MessengerId
+	MessengerId subclass-of:rdfs/Literal
 		TelegramId
+		MatrixId
 	Uri subclass-of:rdfs/Literal
 		Email
 		Url
 			UrlCore d:"Url with prefixes removed: http://, https://, https://www. etc. to make it neater"
 				Facebook
+				GitHub
 				LinkedIn
 				VKontakte
 				YouTube
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	email range:Email
+	matrix range:MatrixId
+	tg range:TelegramId
 	url range:UrlCore
-		cv-url d:"Resume (CV) page"
 		fb range:Facebook
-		hp-url d:"Homepage URL"
+		github range:GitHub
 		linkedin range:LinkedIn
 		old-url
 		vk range:VKontakte

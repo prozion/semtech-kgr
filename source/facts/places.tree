@@ -1,0 +1,37 @@
+places +a:Country
+	Australia +a:City +hi-inv-rel:country
+		Brisbane
+	Austria +a:City +hi-inv-rel:country
+		Graz
+	Germany +a:City +hi-inv-rel:country
+		Berlin
+		Dresden
+	Nederlands +a:City +hi-inv-rel:country
+		Amsterdam
+	Switzerland +a:City +hi-inv-rel:country
+		Geneve
+	UK +a:City +hi-inv-rel:country
+		Bristol
+		Cambridge
+		Colchester
+		Edinburgh
+		London
+		Manchester
+		Oxford
+	USA +a:City +hi-inv-rel:country
+		Blacksburg
+		Chicago
+		Fairborn
+		Forest_Hill
+		Menlo_Park
+		Mountain_View
+		Murray_Hill
+		Oakland
+		Ocala
+		Palo_Alto
+		Pensacola
+		Raleigh
+		Rochester
+		San_Francisco
+		Stanford
+		Urbana

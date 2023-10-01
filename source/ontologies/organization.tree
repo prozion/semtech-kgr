@@ -1,16 +1,22 @@
 classes +a:owl/Class +hi-inv-rel:subclass-of
-	Organization subclass-of:Object
+	Organization subclass-of:GroupOfPeople
 		Committee
 		Company
 		EducationalUnit
 			College
 			University
+		NonprofitOrganization
+			NonprofitCorporation
+		ResearchCenter
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	founder domain:Person range:Organization
 	hq subproperty-of:place domain:Organization range:City d:"Headquarters"
 	stuff domain:Person range:Organization
 		chief
 			ceo
 			cto
+			director
+			president
 		job
 	org range:Organization
 		company range:Company

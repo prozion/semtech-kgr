@@ -5,46 +5,128 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 
+:A_Description_Logic_Primer
+ :year "2014" ;
+ rdf:type :Book ;
+ :author :Markus_Krotzsch, :Frantisek_Simancik, :Ian_Horrocks .
+
+:AAAI
+ rdf:type :Organization ;
+ :url "aaai.org" ;
+ rdfs:label "Association for the Advancement of Artificial Intelligence (AAAI)" .
+
 :abbr
  rdfs:comment "Abbreviation" ;
  rdf:type rdf:Property ;
  rdfs:range rdfs:Literal .
 
+:AI_Magazine
+ :org :AAAI ;
+ rdfs:comment "The journal of record for the AI community" ;
+ rdf:type :ScientificJournal .
+
 :alma-mater
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :uni, :edu .
 
+:Amsterdam
+ :country :Nederlands ;
+ rdf:type :City .
+
 :Andy_Seaborne
  rdf:type :Person ;
  :place :Bristol ;
- :uni :UCambridge ;
- :linkedin "linkedin.com/in/andyseaborne" .
+ :linkedin "linkedin.com/in/andyseaborne" ;
+ :job :Apache_Software_Foundation ;
+ :uni :UCambridge .
+
+:Apache_Software_Foundation
+ rdf:type :NonprofitCorporation ;
+ :hq :Forest_Hill ;
+ :start "1999" .
+
+:Application
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SoftwareProduct .
 
 :Article
  rdf:type owl:Class ;
  rdfs:subClassOf :Paper .
 
-:ArtificialObject
- rdf:type owl:Class ;
- rdfs:subClassOf :Object .
+:Australia
+ rdf:type :Country .
+
+:Austria
+ rdf:type :Country .
 
 :author
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :creator .
+
+:ba
+ rdfs:subPropertyOf :edu ;
+ rdfs:comment "Bachelor degree" ;
+ rdf:type rdf:Property .
+
+:BBC
+ rdf:type :Company ;
+ :hq :London ;
+ :start "1922" .
 
 :bdate
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :start ;
  rdfs:domain :Person .
 
+:Bell_Labs
+ rdf:type :Company ;
+ :url "bell-labs.com" ;
+ :hq :Murray_Hill ;
+ :start "1925" .
+
+:Berlin
+ :country :Germany ;
+ rdf:type :City .
+
+:Bijan_Parsia
+ :pub-url "dblp.uni-trier.de/pid/61/4345.html" ;
+ rdf:type :Person ;
+ :job :UManchester .
+
+:Blacksburg
+ :country :USA ;
+ rdf:type :City .
+
+:Book
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Text .
+
+:book
+ rdfs:domain :Person ;
+ rdf:type rdf:Property ;
+ rdfs:range :Book .
+
 :bplace
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :place ;
  rdfs:domain :Person .
 
+:Brian_McBride
+ rdf:type :Person ;
+ :job :Hewlett_Packard .
+
+:Brisbane
+ :country :Australia ;
+ rdf:type :City .
+
 :Bristol
  :country :UK ;
  rdf:type :City .
+
+:broader
+ owl:inverseOf :narrower ;
+ rdfs:comment "Substitution for skos/broader" ;
+ rdf:type rdf:Property, owl:TransitiveProperty, owl:ReflexiveProperty .
 
 :Cambridge
  :country :UK ;
@@ -54,9 +136,17 @@
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :chief .
 
+:Chicago
+ :country :USA ;
+ rdf:type :City .
+
 :chief
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :stuff .
+
+:Chris_Bizer
+ rdf:type :Person ;
+ :uni :UFreie .
 
 :Cipher
  rdf:type :Company ;
@@ -72,13 +162,22 @@
  rdf:type owl:Class ;
  rdfs:subClassOf :Place .
 
+:class-type
+ rdfs:domain owl:Class ;
+ rdf:type rdf:Property ;
+ rdfs:range owl:Class .
+
 :co-author
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :contributor .
 
 :Code
  rdf:type owl:Class ;
- rdfs:subClassOf :HumanWorkProduct .
+ rdfs:subClassOf :SoftwareProduct .
+
+:Colchester
+ :country :UK ;
+ rdf:type :City .
 
 :College
  rdf:type owl:Class ;
@@ -99,7 +198,7 @@
 
 :contributor
  rdf:type rdf:Property ;
- rdfs:subPropertyOf :worker .
+ rdfs:subPropertyOf :maker .
 
 :country
  rdfs:domain :Place ;
@@ -107,11 +206,12 @@
  rdfs:range :Country .
 
 :Country
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
 
 :creator
  rdf:type rdf:Property ;
- rdfs:subPropertyOf :worker .
+ rdfs:subPropertyOf :maker .
 
 :cto
  rdf:type rdf:Property ;
@@ -122,9 +222,24 @@
  rdfs:comment "Resume (CV) page" ;
  rdf:type rdf:Property .
 
+:Dan_Brickley
+ rdf:type :Person ;
+ :job :Google ;
+ :linkedin "uk.linkedin.com/in/danbri" ;
+ :old-url "danbri.org" .
+
+:Dan_Yamamoto
+ rdf:type :Person ;
+ :email "dan@iij.ad.jp" ;
+ :github "github.com/yamdan" .
+
 :Date
  rdf:type owl:Class ;
  rdfs:subClassOf :Time .
+
+:Dave_Longley
+ rdf:type :Person ;
+ :job :Digital_Bazaar .
 
 :David_Backet
  owl:sameAs :Dave_Beckett ;
@@ -134,15 +249,42 @@
  :linkedin "linkedin.com/in/dajobe" ;
  :hp-url "dajobe.org" .
 
+:David_Wood
+ rdf:type :Person ;
+ :place :Brisbane ;
+ :job :UQueensland ;
+ :url "about.me/david_wood" .
+
 :ddate
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :end ;
  rdfs:domain :Person .
 
+:Digital_Bazaar
+ rdf:type :Company ;
+ :url "digitalbazaar.com" ;
+ :hq :Blacksburg .
+
+:director
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :chief .
+
+:Document
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Text .
+
 :dplace
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :place ;
  rdfs:domain :Person .
+
+:Dresden
+ :country :Germany ;
+ rdf:type :City .
+
+:Edinburgh
+ :country :UK ;
+ rdf:type :City .
 
 :editor
  rdf:type rdf:Property ;
@@ -170,18 +312,120 @@
  rdf:type rdf:Property ;
  rdfs:range :Time .
 
+:ERCIM
+ rdf:type :Organization ;
+ :url "ercim.eu" ;
+ rdfs:label "European Research Consortium for Informatics and Mathematics (ERCIM)" .
+
+:Eric_Miller
+ rdf:type :Person .
+
 :Facebook
  rdf:type owl:Class ;
  rdfs:subClassOf :UrlCore .
+
+:Fairborn
+ :country :USA ;
+ rdf:type :City .
 
 :fb
  rdfs:subPropertyOf :url ;
  rdf:type rdf:Property ;
  rdfs:range :Facebook .
 
+:foaf
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "RDF FOAF information on the person" ;
+ rdf:type rdf:Property .
+
+:Forest_Hill
+ :country :USA ;
+ rdf:type :City .
+
+:former-editor
+ rdf:type rdf:Property ;
+ owl:equivalentProperty :previous-editor ;
+ rdfs:subPropertyOf :editor .
+
 :former-id
  rdf:type rdf:Property ;
  rdfs:subPropertyOf :id .
+
+:Foundations_of_Semantic_Web_technologies
+ :year "2009" ;
+ rdf:type :Book ;
+ :url "semantic-web-book.org" ;
+ :author :Pascal_Hitzler, :Markus_Krotzsch, :Sebastian_Rudolph .
+
+:founder
+ rdfs:domain :Person ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:Frank_Manola
+ rdf:type :Person .
+
+:Frantisek_Simancik
+ rdf:type :Person ;
+ rdfs:label "František Simančík" .
+
+:from
+ rdfs:domain owl:Thing ;
+ rdf:type rdf:Property ;
+ rdfs:range owl:Thing .
+
+:Gavin_Carothers
+ rdf:type :Person ;
+ :job :Lex_Machina .
+
+:Geneve
+ :country :Switzerland ;
+ rdf:type :City .
+
+:Germany
+ rdf:type :Country .
+
+:github
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :GitHub .
+
+:GitHub
+ rdf:type owl:Class ;
+ rdfs:subClassOf :UrlCore .
+
+:Google
+ rdf:type :Company ;
+ :url "about.google" ;
+ :hq :Mountain_View ;
+ :start "1998" .
+
+:Graz
+ :country :Austria ;
+ rdf:type :City .
+
+:Gregg_Kellogg
+ rdf:type :Person ;
+ :foaf "greggkellogg.net/foaf" ;
+ :hp-url "greggkellogg.net" ;
+ :ms :UCalifornia .
+
+:GroupOfObjects
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:GroupOfPeople
+ rdf:type owl:Class ;
+ rdfs:subClassOf :GroupOfObjects .
+
+:Guus_Schreiber
+ rdf:type :Person ;
+ :job :UV_Amsterdam .
+
+:Hewlett_Packard
+ rdf:type :Company ;
+ :hq :Palo_Alto ;
+ :start "1939" .
 
 :hp-url
  rdfs:subPropertyOf :url ;
@@ -195,12 +439,41 @@
  rdf:type rdf:Property ;
  rdfs:range :City .
 
-:HumanWorkProduct
- rdf:type owl:Class ;
- rdfs:subClassOf :ArtificialObject .
+:Hydra_Core_Vocabulary
+ rdf:type :W3CDocument ;
+ :url "hydra-cg.com/spec/latest/core" ;
+ :author :Markus_Lathaler ;
+ :w3c-ud "13.07.2021" .
+
+:Ian_Horrocks
+ :pub-url "dblp.org/pid/h/IanHorrocks.html" ;
+ rdf:type :Person ;
+ :job :UOxford .
 
 :id
  rdf:type rdf:Property .
+
+:IHMC
+ rdf:type :ResearchCenter ;
+ :place :Pensacola, :Ocala ;
+ rdfs:label "The Institute for Human & Machine Cognition (IHMC)" .
+
+:Ivan_Herman
+ rdf:type :Person ;
+ :job :ERCIM .
+
+:job
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :stuff .
+
+:Journal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :PeriodicPublication .
+
+:Lex_Machina
+ rdf:type :Company ;
+ :hq :Menlo_Park ;
+ :start "2013" .
 
 :LinkedIn
  rdf:type owl:Class ;
@@ -215,8 +488,64 @@
  :country :UK ;
  rdf:type :City .
 
+:maker
+ rdfs:domain :Product ;
+ rdf:type rdf:Property ;
+ rdfs:range :Person .
+
+:Manchester
+ :country :UK ;
+ rdf:type :City .
+
+:Manu_Sporny
+ rdf:type :Person ;
+ :job :Digital_Bazaar ;
+ :hp-url "manu.sporny.org" .
+
+:Markus_Krotzsch
+ :pub-url "korrekt.org/page/Publications" ;
+ rdf:type :Person ;
+ :job :UOxford ;
+ rdfs:label "Markus Krötzsch" .
+
+:Markus_Lathaler
+ rdf:type :Person ;
+ :uni :UGraz ;
+ :hp-url "markus-lanthaler.com" .
+
+:matrix
+ rdf:type rdf:Property ;
+ rdfs:range :MatrixId .
+
+:MatrixId
+ rdf:type owl:Class ;
+ rdfs:subClassOf :MessengerId .
+
+:MaturityLevel
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing ;
+ rdfs:seeAlso "w3.org/2004/02/Process-20040205/tr.html" .
+
+:Menlo_Park
+ :country :USA ;
+ rdf:type :City .
+
 :MessengerId
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
+
+:Mountain_View
+ :country :USA ;
+ rdf:type :City .
+
+:ms
+ rdfs:subPropertyOf :edu ;
+ rdfs:comment "Master degree" ;
+ rdf:type rdf:Property .
+
+:Murray_Hill
+ :country :USA ;
+ rdf:type :City .
 
 :name
  rdfs:subPropertyOf rdfs:label ;
@@ -224,8 +553,40 @@
  rdf:type rdf:Property ;
  rdfs:range rdfs:Literal .
 
+:narrower
+ rdfs:comment "Substitution for skos/narrower" ;
+ rdf:type rdf:Property .
+
+:Nederlands
+ rdf:type :Country .
+
+:Newspaper
+ rdf:type owl:Class ;
+ rdfs:subClassOf :PeriodicPublication .
+
+:NonprofitCorporation
+ rdf:type owl:Class ;
+ rdfs:subClassOf :NonprofitOrganization .
+
+:NonprofitOrganization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:Nuance
+ rdf:type :Company ;
+ :url "nuance.com" .
+
+:Oakland
+ :country :USA ;
+ rdf:type :City .
+
 :Object
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:Ocala
+ :country :USA ;
+ rdf:type :City .
 
 :old-url
  rdf:type rdf:Property ;
@@ -241,26 +602,99 @@
 
 :Organization
  rdf:type owl:Class ;
- rdfs:subClassOf :Object .
+ rdfs:subClassOf :GroupOfPeople .
+
+:OWL2_Overview
+ :w3c-rec "11.12.2012" ;
+ :url "w3.org/TR/owl-overview" ;
+ :contributor :Ivan_Herman, :Ian_Horrocks, :Peter_F_Patel-Schneider ;
+ :title "OWL 2 Web Ontology Language. Document Overview" ;
+ rdf:type :W3CDocument .
+
+:OWL2_Primer
+ :w3c-rec "11.12.2012" ;
+ :url "w3.org/TR/owl-primer" ;
+ :editor :Pascal_Hitzler, :Markus_Krotzsch, :Bijan_Parsia, :Peter_F_Patel-Schneider, :Sebastian_Rudolph ;
+ :title "OWL 2 Web Ontology Language Primer" ;
+ rdf:type :W3CDocument .
 
 :Oxford
  :country :UK ;
+ rdf:type :City .
+
+:Palo_Alto
+ :country :USA ;
  rdf:type :City .
 
 :Paper
  rdf:type owl:Class ;
  rdfs:subClassOf :Text .
 
+:Pascal_Hitzler
+ rdf:type :Person ;
+ :job :UWright .
+
+:Patrick_J_Hayes
+ :president :AAAI ;
+ rdf:type :Person ;
+ :phd :UEdinburgh ;
+ :job :UEssex, :UIllinois, :URochester, :UGeneve, :UStanford, :IHMC ;
+ :url "ihmc.us/groups/phayes" ;
+ :ba :UCambridge .
+
+:Pensacola
+ :country :USA ;
+ rdf:type :City .
+
+:PeriodicPublication
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Product .
+
 :Person
  rdf:type owl:Class ;
  rdfs:subClassOf :Object .
+
+:Peter_F_Patel-Schneider
+ :pub-url "dblp.org/pid/78/850.html" ;
+ rdf:type :Person ;
+ :job :Nuance, :Bell_Labs .
+
+:phd
+ rdfs:subPropertyOf :edu ;
+ rdfs:comment "PhD degree" ;
+ rdf:type rdf:Property .
 
 :place
  rdf:type rdf:Property ;
  rdfs:range :Place .
 
 :Place
- rdf:type owl:Class .
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
+
+:president
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :chief .
+
+:previous-editor
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :editor .
+
+:Product
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Object .
+
+:pub
+ rdfs:subPropertyOf :start ;
+ rdfs:domain :Text ;
+ rdfs:comment "Date of text publication" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Time .
+
+:pub-url
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "List of publications" ;
+ rdf:type rdf:Property .
 
 :Queens.ox
  rdf:type :University ;
@@ -268,28 +702,110 @@
  :hq :Oxford ;
  :start "1341" .
 
+:R_V_Guha
+ rdf:type :Person ;
+ :job :Google .
+
+:Raleigh
+ :country :USA ;
+ rdf:type :City .
+
+:RDF_1.1
+ :w3c-note "25.02.2014" ;
+ :url "w3.org/TR/2014/REC-rdf11-concepts-20140225" ;
+ :editor :Richard_Cyganiak, :David_Wood, :Markus_Lathaler ;
+ :title "RDF 1.1 Concepts and Abstract Syntax" ;
+ rdf:type :W3CDocument .
+
+:RDF_1.1_Primer
+ rdf:type :W3CDocument ;
+ :w3c-note "24.06.2014" ;
+ :url "w3.org/TR/rdf11-primer" ;
+ :editor :Guus_Schreiber, :Yves_Raymond ;
+ :former-editor :Frank_Manola, :Eric_Miller, :Brian_McBride .
+
+:RDF_1.1_Schema
+ rdf:type :W3CDocument ;
+ :w3c-rec "25.02.2014" ;
+ :url "w3.org/TR/rdf11-schema" ;
+ :editor :Dan_Brickley, :R_V_Guha ;
+ :former-editor :Brian_McBride .
+
+:RDF_1.1_Semantics
+ rdf:type :W3CDocument ;
+ :w3c-rec "25.02.2014" ;
+ :url "w3.org/TR/rdf11-mt" ;
+ :editor :Patrick_J_Hayes, :Peter_F_Patel-Schneider .
+
+:RDF_1.2_Schema
+ rdf:type :W3CDocument ;
+ :url "w3.org/TR/rdf-schema" ;
+ :from :RDF_1.1_Schema ;
+ :w3c-wd "28.09.2023" .
+
+:RDF_Dataset_Canonicalization
+ rdf:type :W3CDocument ;
+ :url "w3.org/TR/rdf-canon" ;
+ :editor :Dave_Longley, :Gregg_Kellogg, :Dan_Yamamoto ;
+ :author :Dave_Longley ;
+ :former-editor :Manu_Sporny ;
+ :w3c-wd "11.09.2023" .
+
 rdfs:label
  rdf:type rdf:Property .
+
+:ResearchCenter
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:Richard_Cyganiak
+ rdf:type :Person ;
+ :linkedin "linkedin.com/in/cygri" ;
+ :hp-url "richard.cyganiak.de" ;
+ :job :TopQuadrant ;
+ :uni :UFreie .
+
+:Rochester
+ :country :USA ;
+ rdf:type :City .
 
 :San_Francisco
  :country :USA ;
  rdf:type :City .
+
+:ScientificJournal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Journal .
+
+:Sebastian_Rudolph
+ rdf:type :Person ;
+ :job :TUDresden ;
+ :url "iccl.inf.tu-dresden.de/web/Sebastian_Rudolph" ;
+ :matrix "serudolp:tu-dresden.de" .
 
 <https://purl.org/prozion/semtech#>
  rdf:type owl:Ontology ;
  owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://www.w3.org/2001/XMLSchema#> ;
  rdfs:label "A knowledge graph on Semantic Web technologies (aka SemTech)" .
 
+:SoftwareProduct
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Product .
+
 :SPARQL_1.1_spec
  :w3c-rec "2013" ;
  :url "w3.org/TR/sparql11-query" ;
  :editor :Steve_Harris, :Andy_Seaborne ;
  :title "SPARQL 1.1 Query Language" ;
- rdf:type :Specification .
+ rdf:type :W3CDocument .
 
 :Specification
  rdf:type owl:Class ;
- rdfs:subClassOf :Paper .
+ rdfs:subClassOf :Document .
+
+:Stanford
+ :country :USA ;
+ rdf:type :City .
 
 :start
  rdf:type rdf:Property ;
@@ -300,17 +816,20 @@ rdfs:label
  :email "steve.harris@garlik.com" ;
  :cto :Cipher .
 
+:Stmt_Gregg_Kellogg_ms_UCalifornia
+ rdf:subject :Gregg_Kellogg ;
+ :year "1975" ;
+ rdf:type rdf:Statement ;
+ rdf:object :UCalifornia ;
+ rdf:predicate :ms .
+
 :stuff
  rdfs:domain :Person ;
  rdf:type rdf:Property ;
  rdfs:range :Organization .
 
-:subm
- rdfs:subPropertyOf :start ;
- rdfs:domain :Paper ;
- rdfs:comment "Date of paper submission" ;
- rdf:type rdf:Property ;
- rdfs:range :Time .
+:Switzerland
+ rdf:type :Country .
 
 :TelegramId
  rdf:type owl:Class ;
@@ -318,7 +837,11 @@ rdfs:label
 
 :Text
  rdf:type owl:Class ;
- rdfs:subClassOf :HumanWorkProduct .
+ rdfs:subClassOf :Product .
+
+:tg
+ rdf:type rdf:Property ;
+ rdfs:range :TelegramId .
 
 :Tim_Berners-Lee
  rdf:type :Person ;
@@ -331,16 +854,37 @@ rdfs:label
  rdfs:subClassOf rdfs:Literal .
 
 :title
- rdfs:domain :HumanWorkProduct ;
+ rdfs:domain :Product ;
  rdf:type rdf:Property ;
  rdfs:range rdfs:Literal .
 
+:TopQuadrant
+ rdf:type :Company ;
+ :url "topquadrant.com" ;
+ :hq :Raleigh ;
+ :start "2001" .
+
+:Trig_spec
+ :w3c-rec "25.02.2014" ;
+ :url "w3.org/TR/trig" ;
+ :editor :Gavin_Carothers, :Andy_Seaborne ;
+ :author :Chris_Bizer, :Richard_Cyganiak ;
+ :title "RDF 1.1 TriG" ;
+ rdf:type :W3CDocument .
+
+:TUDresden
+ rdf:type :University ;
+ :url "tu-dresden.de" ;
+ rdfs:label "Dresden University of Technology" ;
+ :hq :Dresden ;
+ :start "1828" .
+
 :Turtle_spec
  :url "w3.org/TeamSubmission/turtle" ;
- :subm "2011" ;
  :author :David_Backet, :Tim_Berners-Lee ;
+ :w3c-subm "2011" ;
  :title "Turtle - Terse RDF Triple Language" ;
- rdf:type :Specification .
+ rdf:type :W3CDocument .
 
 :UBristol
  rdf:type :University ;
@@ -348,12 +892,57 @@ rdfs:label
  :hq :Bristol ;
  :start "1595", "1876", "1909" .
 
+:UCalifornia
+ rdf:type :University ;
+ rdfs:label "University of California" ;
+ :hq :Oakland ;
+ :start "1868" .
+
 :UCambridge
  rdf:type :University ;
  :hq :Cambridge .
 
+:UEdinburgh
+ rdf:type :University ;
+ rdfs:label "University of Edinburgh" ;
+ :hq :Edinburgh ;
+ :start "1582" .
+
+:UEssex
+ rdf:type :University ;
+ :url "essex.ac.uk" ;
+ rdfs:label "University of Essex" ;
+ :hq :Colchester ;
+ :start "1964" .
+
+:UFreie
+ rdf:type :University ;
+ rdfs:label "Freie Universität Berlin" ;
+ :hq :Berlin .
+
+:UGeneve
+ rdf:type :University ;
+ rdfs:label "Universite de Geneve" ;
+ :hq :Geneve .
+
+:UGraz
+ rdf:type :University ;
+ :hq :Graz .
+
+:UIllinois
+ rdf:type :University ;
+ :place :Chicago, :Urbana ;
+ :url "illinois.edu" ;
+ rdfs:label "University of Illinois Urbana-Champaign" .
+
 :UK
  rdf:type :Country .
+
+:UManchester
+ rdf:type :University ;
+ rdfs:label "University of Manchester" ;
+ :hq :Manchester ;
+ :start "1824" .
 
 :uni
  rdfs:subPropertyOf :org ;
@@ -363,6 +952,18 @@ rdfs:label
 :University
  rdf:type owl:Class ;
  rdfs:subClassOf :EducationalUnit .
+
+:UOxford
+ rdf:type :University ;
+ :hq :Oxford .
+
+:UQueensland
+ rdf:type :University ;
+ :hq :Brisbane .
+
+:Urbana
+ :country :USA ;
+ rdf:type :City .
 
 :Uri
  rdf:type owl:Class ;
@@ -381,8 +982,31 @@ rdfs:label
  rdfs:comment "Url with prefixes removed: http://, https://, https://www. etc. to make it neater" ;
  rdf:type owl:Class .
 
+:URochester
+ rdf:type :University ;
+ rdfs:label "University of Rochester" ;
+ :hq :Rochester ;
+ :start "1850" .
+
 :USA
  rdf:type :Country .
+
+:UStanford
+ rdf:type :University ;
+ rdfs:label "Stanford University" ;
+ :hq :Stanford ;
+ :start "1891" .
+
+:UV_Amsterdam
+ rdf:type :University ;
+ rdfs:label "Vrije Universiteit Amsterdam" ;
+ :hq :Amsterdam .
+
+:UWright
+ rdf:type :University ;
+ rdfs:label "Wright State University" ;
+ :hq :Fairborn ;
+ :start "1967" .
 
 :vk
  rdfs:subPropertyOf :url ;
@@ -393,20 +1017,86 @@ rdfs:label
  rdf:type owl:Class ;
  rdfs:subClassOf :UrlCore .
 
+:w3c-cr
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CCandidateRecommendation .
+
+:w3c-issued
+ rdfs:domain :W3CDocument ;
+ rdf:type rdf:Property ;
+ rdfs:range :Date .
+
+:w3c-note
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CNote .
+
+:w3c-pr
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CProposedRecommendation .
+
 :w3c-rec
- rdfs:subPropertyOf :subm ;
- rdfs:domain :W3CSpecification ;
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CRecommendation ;
  rdfs:comment "When the paper acquired a W3C Recommendation status" ;
  rdf:type rdf:Property .
 
-:W3CSpecification
- rdf:type owl:Class ;
- rdfs:subClassOf :Specification .
+:w3c-subm
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:comment "Date of paper submission" ;
+ rdf:type rdf:Property .
 
-:worker
- rdfs:domain :HumanWorkProduct ;
+:w3c-ud
  rdf:type rdf:Property ;
- rdfs:range :Person .
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CUnofficialDraft .
+
+:w3c-wd
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :w3c-issued ;
+ rdfs:domain :W3CWorkingDraft .
+
+:W3CCandidateRecommendation
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDocument ;
+ :class-type :MaturityLevel ;
+ :abbr "CR" .
+
+:W3CDocument
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Document .
+
+:W3CDraft
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDocument .
+
+:W3CNote
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDocument .
+
+:W3CProposedRecommendation
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDocument ;
+ :class-type :MaturityLevel ;
+ :abbr "PR" .
+
+:W3CRecommendation
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Specification, :W3CDocument ;
+ :class-type :MaturityLevel ;
+ :abbr "REC" .
+
+:W3CUnofficialDraft
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDraft .
+
+:W3CWorkingDraft
+ rdf:type owl:Class ;
+ rdfs:subClassOf :W3CDraft ;
+ :class-type :MaturityLevel ;
+ :abbr "WD" .
 
 :year
  rdf:type rdf:Property ;
@@ -424,4 +1114,10 @@ rdfs:label
  rdfs:subPropertyOf :url ;
  rdf:type rdf:Property ;
  rdfs:range :YouTube .
+
+:Yves_Raymond
+ rdf:type :Person ;
+ :job :BBC, :Google ;
+ :url "raimond.me.uk" ;
+ :director :Google .
 

@@ -1,0 +1,30 @@
+people +a:Person
+	Andy_Seaborne job:Apache_Software_Foundation place:Bristol linkedin:linkedin.com/in/andyseaborne uni:UCambridge
+	Bijan_Parsia job:UManchester pub-url:dblp.uni-trier.de/pid/61/4345.html
+	Brian_McBride job:Hewlett_Packard
+	Chris_Bizer uni:UFreie
+	Dan_Brickley job:Google linkedin:uk.linkedin.com/in/danbri old-url:danbri.org
+	Dan_Yamamoto email:dan@iij.ad.jp github:github.com/yamdan
+	Dave_Longley job:Digital_Bazaar
+	David_Backet alt:Dave_Beckett place:San_Francisco uni:UBristol linkedin:linkedin.com/in/dajobe hp-url:dajobe.org
+	David_Wood job:UQueensland place:Brisbane url:about.me/david_wood
+	Eric_Miller
+	Frank_Manola
+	Frantisek_Simancik name:"František Simančík"
+	Gavin_Carothers job:Lex_Machina
+	Gregg_Kellogg foaf:greggkellogg.net/foaf hp-url:greggkellogg.net ms:UCalifornia^year:1975
+	Guus_Schreiber job:UV_Amsterdam
+	Ian_Horrocks job:UOxford pub-url:dblp.org/pid/h/IanHorrocks.html
+	Ivan_Herman job:ERCIM
+	Manu_Sporny job:Digital_Bazaar hp-url:manu.sporny.org
+	Markus_Krotzsch name:"Markus Krötzsch" job:UOxford pub-url:korrekt.org/page/Publications
+	Markus_Lathaler uni:UGraz hp-url:markus-lanthaler.com
+	Pascal_Hitzler job:UWright
+	Patrick_J_Hayes job:UEssex,UIllinois,URochester,UGeneve,UStanford,IHMC url:ihmc.us/groups/phayes president:AAAI phd:UEdinburgh ba:UCambridge
+	Peter_F_Patel-Schneider job:Nuance,Bell_Labs pub-url:dblp.org/pid/78/850.html
+	R_V_Guha job:Google
+	Richard_Cyganiak job:TopQuadrant linkedin:linkedin.com/in/cygri hp-url:richard.cyganiak.de uni:UFreie
+	Sebastian_Rudolph job:TUDresden url:iccl.inf.tu-dresden.de/web/Sebastian_Rudolph matrix:serudolp:tu-dresden.de
+	Steve_Harris email:steve.harris@garlik.com cto:Cipher
+	Tim_Berners-Lee bplace:London bdate:08.06.1955 edu:Queens.ox
+	Yves_Raymond job:BBC,Google url:raimond.me.uk director:Google

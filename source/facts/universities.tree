@@ -1,0 +1,19 @@
+universities +a:University
+	Queens.ox name:"The Queen's College, Oxford" hq:Oxford start:1341 
+	UFreie name:"Freie Universität Berlin" hq:Berlin
+	UBristol name:"University of Bristol" hq:Bristol start:1595,1876,1909
+	UCambridge hq:Cambridge start:~1209
+	UQueensland hq:Brisbane
+	UGraz hq:Graz
+	UGeneve name:"Universite de Geneve" hq:Geneve
+	UV_Amsterdam name:"Vrije Universiteit Amsterdam" hq:Amsterdam
+	UCalifornia name:"University of California" hq:Oakland start:1868
+	UOxford hq:Oxford start:~1096
+	UWright name:"Wright State University" hq:Fairborn start:1967
+	TUDresden name:"Dresden University of Technology" hq:Dresden start:1828 url:tu-dresden.de
+	UEdinburgh name:"University of Edinburgh" hq:Edinburgh start:1582
+	UManchester name:"University of Manchester" hq:Manchester start:1824
+	UEssex name:"University of Essex" hq:Colchester start:1964 url:essex.ac.uk
+	UIllinois name:"University of Illinois Urbana-Champaign" place:Chicago,Urbana url:illinois.edu
+	URochester name:"University of Rochester" hq:Rochester start:1850
+	UStanford name:"Stanford University" hq:Stanford start:1891
